@@ -30,9 +30,9 @@ CONFIG_NAME="${CONFIG_ARRAY[2]}"
 if [ "${CONFIG_REPO}" = "openwrt" ]; then
   REPO_URL="https://github.com/openwrt/openwrt"
   REPO_BRANCH="master"
-elif [ "${CONFIG_REPO}" = "lede" ]; then
-  REPO_URL="https://github.com/coolsnowwolf/lede"
-  REPO_BRANCH="master"
+elif [ "${CONFIG_REPO}" = "immortalwrt" ]; then
+  REPO_URL="https://github.com/immortalwrt/immortalwrt"
+  REPO_BRANCH="openwrt-24.10"
 else
   echo "${config_path} name error!"
   exit 1
@@ -55,7 +55,7 @@ pushd "${CONFIG_REPO}"
 
 git pull
 
-sed -i "/src-git ing /d; 1 i src-git ing https://github.com/wjz304/openwrt-packages;${CONFIG_REPO}" feeds.conf.default
+#sed -i "/src-git ing /d; 1 i src-git ing https://github.com/wjz304/openwrt-packages;${CONFIG_REPO}" feeds.conf.default
 
 ./scripts/feeds update -a
 # if [ -d ./feeds/packages/lang/golang ]; then
