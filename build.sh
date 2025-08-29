@@ -75,8 +75,8 @@ git pull
 cp -f "${CONFIG_FILE}" "./.config"
 cp -f "${SCRIPT_FILE}" "./diy.sh"
 
-chmod +x "./diy.sh"
-"./diy.sh" "${WORK_PATH}/${CONFIG_REPO}" "${CONFIG_OWNER}" "${CONFIG_ARCH}"
+chmod +x "${GITHUB_WORKSPACE}/diy.sh"
+"${GITHUB_WORKSPACE}/diy.sh" "${WORK_PATH}/${CONFIG_REPO}" "${CONFIG_OWNER}" "${CONFIG_ARCH}"
 
 make defconfig
 
