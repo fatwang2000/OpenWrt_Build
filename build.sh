@@ -36,7 +36,7 @@ if [ "${CONFIG_REPO}" = "openwrt" ]; then
 elif [ "${CONFIG_REPO}" = "lede" ]; then
   REPO_URL="https://github.com/coolsnowwolf/lede"
   REPO_BRANCH="master"
-elif [ "${CONFIG_REPO}" = "lede" ]; then
+elif [ "${CONFIG_REPO}" = "immortalwrt" ]; then
   REPO_URL="https://github.com/immortalwrt/immortalwrt"
   REPO_BRANCH="master"
 else
