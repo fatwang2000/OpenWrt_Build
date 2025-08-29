@@ -36,6 +36,9 @@ if [ "${CONFIG_REPO}" = "openwrt" ]; then
 elif [ "${CONFIG_REPO}" = "lede" ]; then
   REPO_URL="https://github.com/coolsnowwolf/lede"
   REPO_BRANCH="master"
+elif [ "${CONFIG_REPO}" = "lede" ]; then
+  REPO_URL="https://github.com/immortalwrt/immortalwrt"
+  REPO_BRANCH="master"
 else
   echo "${CONFIG_FILE} name error!"
   exit 1
@@ -58,7 +61,7 @@ pushd "${WORK_PATH}/${CONFIG_REPO}" || exit
 
 git pull
 
-sed -i "/src-git ing /d; 1 i src-git ing https://github.com/wjz304/openwrt-packages;${CONFIG_REPO}" feeds.conf.default
+# by fatwang sed -i "/src-git ing /d; 1 i src-git ing https://github.com/wjz304/openwrt-packages;${CONFIG_REPO}" feeds.conf.default
 
 ./scripts/feeds update -a
 # if [ -d ./feeds/packages/lang/golang ]; then
