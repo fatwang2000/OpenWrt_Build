@@ -13,7 +13,8 @@ fi
 
 WORK_PATH="$(pwd)"
 
-SCRIPT_FILE="${WORK_PATH}/diy.sh"
+#SCRIPT_FILE="$(realpath)/diy.sh"
+#SCRIPT_FILE="${WORK_PATH}/diy.sh"
 CONFIG_FILE=$(realpath "${1}")                        # 传入的配置文件
 CONFIG_PATH=$(dirname "${CONFIG_FILE}")               # 配置文件路径
 CONFIG_NAME=$(basename "${CONFIG_FILE}" .config)      # 配置文件名
@@ -73,7 +74,7 @@ git pull
 ./scripts/feeds install -p ing -a
 
 cp -f "${CONFIG_FILE}" "./.config"
-cp -f "${SCRIPT_FILE}" "./diy.sh"
+cp -f "${CONFIG_PATH}/diy.sh" "./diy.sh"
 
 chmod +x "${GITHUB_WORKSPACE}/diy.sh"
 "${GITHUB_WORKSPACE}/diy.sh" "${WORK_PATH}/${CONFIG_REPO}" "${CONFIG_OWNER}" "${CONFIG_ARCH}"
