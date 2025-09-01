@@ -74,7 +74,7 @@ git pull
 ./scripts/feeds install -p ing -a
 
 cp -f "${CONFIG_FILE}" "./.config"
-cp -f "${CONFIG_PATH}/diy.sh" "./diy.sh"
+cp -f "${GITHUB_WORKSPACE}/diy.sh" "./diy.sh"
 
 chmod +x "${GITHUB_WORKSPACE}/diy.sh"
 "${GITHUB_WORKSPACE}/diy.sh" "${WORK_PATH}/${CONFIG_REPO}" "${CONFIG_OWNER}" "${CONFIG_ARCH}"
